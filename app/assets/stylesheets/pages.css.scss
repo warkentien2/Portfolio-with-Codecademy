@@ -1,0 +1,83 @@
+/* FLEXIBLE BOX MODEL */
+*{
+	margin: 0px;
+	padding: 0px;
+}
+h1{
+	font: bold 20px Tahoma;
+}
+h2{
+	font: bold 14px Tahoma;
+}
+header, nav, section, article, hgroup, aside, footer{
+	display: block;
+}
+body{ /* treated as a box! because it has children inside */
+	width: 100%;
+	display: -webkit-box; /* flexible boxes *//*?? firefox usa -moz ??*/
+	-webkit-box-pack: center; /* center content in extra space */
+}
+#big_wrapper{ /* treated as a box */
+	max-width: 1000px;
+	margin: 20px 0px;
+	display: -webkit-box;
+	-webkit-box-orient: vertical; /* organize children Vertically <block> */
+	-webkit-box-flex: 1; /* 1 == true! to flexible */
+}
+#top_header{
+	background: yellow;
+	border: 3px solid black;
+	padding: 20px;
+}
+#top_menu{
+	border: red;
+	background: blue;
+	color: white;
+}
+#top_menu li{
+	display: inline-block;
+	list-style: none;
+	padding: 5px;
+	font: bold 14px Tahoma;
+}
+#new_div{ /* treated as a box */
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+}
+#main_section{ /* content is easy to flex size */
+	border: 1px solid blue;
+	-webkit-box-flex: 1; /* fits dinamically */
+	margin: 20px;
+	padding: 20px;
+}
+#side_news{ /* things like adds cant change size */ 
+	border: 1px solid red; /* both columns can't be flexible, or they won't know which size to be */
+	width: 220px;
+	margin: 20px 0px;
+	padding: 30px;
+	background: #66CCCC;
+}
+#the_footer{
+	text-align: center;
+	padding: 20px;
+	border-top: 2px solid green;
+}
+article{
+	border: 1px solid green;
+	padding: 20px;
+	margin-bottom: 10px;
+	background: #FFFBCC;
+}
+
+footer {
+	text-align: right;
+}
+
+#the_footer li{
+	display: inline-block;
+}
+
+li img {
+  max-height: 50px;
+  max-length: 50px;
+}
